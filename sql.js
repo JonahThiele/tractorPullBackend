@@ -9,8 +9,21 @@ const pool = new Pool({
     password: process.env.AZURE_POSTGRESQL_PASSWORD,
     max: 20,
     port: process.env.AZURE_POSTGRESQL_PORT,
-    database: process.env.AZURE_POSTGRESQL_DATABASE
-})
+    database: process.env.AZURE_POSTGRESQL_DATABASE,
+    ssl: {
+        rejectUnauthorized: false // Azure requires SSL
+    }
+});
+
+console.log('Attempting to connect to PostgreSQL...');
+
+pool.query('SELECT NOW()')
+    .then(result => {
+        console.log('✅ PostgreSQL connection successful:', result.rows[0]);
+    })
+    .catch(err => {
+        console.error('❌ PostgreSQL connection failed:', err);
+    });
 
 module.exports = {
     //get all the teams
