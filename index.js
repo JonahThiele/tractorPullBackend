@@ -1,7 +1,7 @@
 const express = require('express')
 const sql = require('./sql.js')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 const passport = require('passport')
 const session = require('express-session')
