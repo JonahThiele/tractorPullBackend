@@ -4,12 +4,12 @@ const env = require('dotenv')
 env.config()
 
 const pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    password: process.env.POSTGRES_PASSWORD,
+    host: process.env.AZURE_POSTGRESQL_HOST,
+    user: process.env.AZURE_POSTGRESQL_USER,
+    password: process.env.AZURE_POSTGRESQL_PASSWORD,
     max: 20,
-    port: 5432,
-    database: "tractorPull"
+    port: process.env.AZURE_POSTGRESQL_PORT,
+    database: process.env.AZURE_POSTGRESQL_DATABASE
 })
 
 module.exports = {

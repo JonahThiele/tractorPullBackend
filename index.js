@@ -19,7 +19,7 @@ const cors = require('cors');
 
 // CORS options
 const corsOptions = {
-    origin: 'http://localhost:8081', 
+    origin: 'tractorpullbackend-exhybafjf4agh7bz.canadacentral-01.azurewebsites.net', 
     credentials: true,    
     methods: ['GET', 'POST'],
 };
@@ -39,7 +39,7 @@ app.use(session({
         secure: false,
         httpOnly: true,
         //wonder if I can force this for a certain port another way, later on this should be connected to the azure deploy
-        domain: "localhost",
+        domain: "tractorpullbackend-exhybafjf4agh7bz.canadacentral-01.azurewebsites.net",
         //path: '/',
         maxAge: 1000 * 60 * 60 * 24,
         sameSite: 'Lax',
