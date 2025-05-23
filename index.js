@@ -1,7 +1,8 @@
 const express = require('express')
 const sql = require('./sql.js')
 const app = express()
-const port = process.env.PORT || 3000
+//I don't know why its not picking up the 8080 port, but now Im hardcoding it, hoperfully that fixes it
+const port = process.env.PORT || 8080
 
 const passport = require('passport')
 const session = require('express-session')
