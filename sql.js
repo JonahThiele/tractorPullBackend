@@ -1,15 +1,21 @@
 //this is going to contain the sql queries to update or get the data of the tractor list
 const { Pool} = require('pg')
 const env = require('dotenv')
-env.config()
+//env.config()
+
+//maybe exporting these will make them work idk
+export const host = process.env.AZURE_POSTGRESQL_HOST
+export const user = process.env.AZURE_POSTGRESQL_USER
+export const password = process.env.AZURE_POSTGRESQL_PORT
+export const database = process.env.AZURE_POSTGRESQL_DATABASE
 
 const pool = new Pool({
-    host: process.env.AZURE_POSTGRESQL_HOST,
-    user: process.env.AZURE_POSTGRESQL_USER,
-    password: process.env.AZURE_POSTGRESQL_PASSWORD,
+    host: host,
+    user: user,
+    password: password,
     max: 20,
-    port: process.env.AZURE_POSTGRESQL_PORT,
-    database: process.env.AZURE_POSTGRESQL_DATABASE,
+    port: port,
+    database: database,
     ssl: {
         rejectUnauthorized: false // Azure requires SSL
     }
