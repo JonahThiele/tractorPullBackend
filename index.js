@@ -146,5 +146,5 @@ app.post('/setDistance', passport.authenticate('session'), (req, res) =>
 //setup a post path to update the different ones via a sql call
 app.listen(port, () => {
     //run from the 
-    console.log('Tractor pull backend listening on port 3000')
+    console.log(`Tractor pull backend listening on port ${port}`)
 })
