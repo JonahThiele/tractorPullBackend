@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 const crypto = require('crypto')
 const env = require('dotenv')
-env.config()
+//env.config()
 
 const cors = require('cors');
 
