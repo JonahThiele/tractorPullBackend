@@ -113,6 +113,8 @@ app.post('/recorder', (req, res, next) => {
 //everything below this is actual app functionality not auth
 //set this path to get all the teams info by default
 app.get('/teams',(req, res) => {
+    //some printing for debuggin my issues with azure
+    console.log("Grabbing teams, debugging for azure")    
     sql.get_teams().then( teams => {
         res.json(teams)
     }).catch(err => {
